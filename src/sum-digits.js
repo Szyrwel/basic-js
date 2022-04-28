@@ -23,7 +23,6 @@ function getSumOfDigits(n) {
     n = result;
     return getSumOfDigits(n);
   }
-  
 }
 
 module.exports = {
