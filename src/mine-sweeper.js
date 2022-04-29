@@ -24,37 +24,48 @@ const { NotImplementedError } = require("../extensions/index.js");
  * ]
  */
  function minesweeper(matrix) {
-  let m = []
+  let m = [];
   for (let i = 0; i < matrix.length; i++) {
-   
     let row = [];
-     for (let k = 0; k < matrix[i].length; k++) {
-       let result = 0;
-      ((i - 1 !== -1) && (k - 1 !== -1) && (matrix[i-1][k - 1] === true)) ? result++ : result;
+    for (let k = 0; k < matrix[i].length; k++) {
+      let result = 0;
+      i - 1 !== -1 && k - 1 !== -1 && matrix[i - 1][k - 1] === true
+        ? result++
+        : result;
 
-       ((i - 1 !== -1) && (matrix[i-1][k] === true)) ? result++ : result;
+      i - 1 !== -1 && matrix[i - 1][k] === true ? result++ : result;
 
-       ((i - 1 !== -1) && (k + 1 !== matrix[i][k].length - 1) && (matrix[i-1][k + 1] === true)) ? result++ : result;
+      i - 1 !== -1 &&
+      k + 1 !== matrix[i].length - 1 &&
+      matrix[i - 1][k + 1] === true
+        ? result++
+        : result;
 
-       ((k - 1 !== -1) && (matrix[i][k - 1] === true)) ? result++ : result;
+      k - 1 !== -1 && matrix[i][k - 1] === true ? result++ : result;
 
-       ((k + 1 !== matrix[i][k].length) && (matrix[i][k + 1] === true)) ? result++ : result;
+      k + 1 !== matrix[i].length && matrix[i][k + 1] === true
+        ? result++
+        : result;
 
-       ((i + 1 !== matrix.length) && (k - 1 !== -1) && (matrix[i+1][k - 1] === true)) ? result++ : result;
+      i + 1 !== matrix.length && k - 1 !== -1 && matrix[i + 1][k - 1] === true
+        ? result++
+        : result;
 
-       ((i + 1 !== matrix.length) && (matrix[i+1][k] === true)) ? result++ : result;
-        if (matrix.length === 3) {
-       ((i + 1 !== matrix[i].length) && (k + 1 !== matrix[i][k].length) && (matrix[i+1][k + 1] === true)) ? result++ : result;
-        }
+      i + 1 !== matrix.length && matrix[i + 1][k] === true ? result++ : result;
+      
+        i + 1 !== matrix.length &&
+        k + 1 !== matrix[i].length &&
+        matrix[i + 1][k + 1] === true
+          ? result++
+          : result;
+      
 
-       row.push(result)
-
-            
+      row.push(result);
     }
-    m.push(row)
-//     
+    m.push(row);
+    //
   }
-  return m
+  return m;
 }
 
 module.exports = {
