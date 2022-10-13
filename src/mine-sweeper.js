@@ -61,8 +61,8 @@ const { NotImplementedError } = require("../extensions/index.js");
       
 
       row.push(result);
+      m.push(row);
     }
-    m.push(row);
     //
   }
   return m;
