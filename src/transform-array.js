@@ -24,7 +24,6 @@ const { NotImplementedError } = require('../extensions/index.js');
       if ( index !== newArr.length - 1) {
         newArr.splice(index, 2);
       }
-      
     } else if (el === '--discard-prev') {
      result.pop();
     } else if (el === '--double-next') {
@@ -35,7 +34,6 @@ const { NotImplementedError } = require('../extensions/index.js');
       if (index !== 0) {
         result.push(newArr[index - 1]);
       }
-      
     }  else {
       result.push(el)
     }
